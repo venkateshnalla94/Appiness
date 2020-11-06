@@ -3,7 +3,7 @@ import {FlatList, ImageBackground, StyleSheet, Text, View} from 'react-native';
 import ListItem from '../components/ListItem';
 import * as data from '../data/employeInfo';
 import {Context as AuthContext} from '../context/AuthContext';
-
+const image = { uri: "https://c4.wallpaperflare.com/wallpaper/737/512/920/minimalism-abstract-blue-background-artwork-wallpaper-preview.jpg" };
 const EmployeeListScree=()=>{
      const {state} = useContext(AuthContext);
      return(
@@ -16,13 +16,18 @@ const EmployeeListScree=()=>{
                     renderItem={({item})=>{
                          return <ListItem data={item}/>
                     }}
-                   
                />
+               
               
           </View>
      )
 }
 const EmployeeListScreeStyles=StyleSheet.create({
+     image:{
+          flex: 1,
+          resizeMode: "cover",
+          justifyContent: "center"
+     },
      mainView:{
           flex:1,
      },
