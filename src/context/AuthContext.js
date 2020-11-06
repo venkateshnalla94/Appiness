@@ -3,7 +3,7 @@ import * as data from '../data/userInfo';
 const authReducer = (state, action) => {
      switch (action.type) {
           case 'login':{
-               return {errorMessage: '',allow:action.payload}
+               return {userName:action.payload.userName,allow:action.payload.access}
           }
           case 'loginFailure':{
                return {...state,allow: action.payload}
@@ -26,7 +26,8 @@ const login_reducer=(dispatch)=>{
      return async ({userName,password,navigation})=>{
           const userData=data.default;
           if(userData.username===userName&&userData.password===password){
-               dispatch({type:'login',payload:true});
+               dispatch({type:'login',payload:{access:true,userName:userName}});
+               
                navigation.navigate('EmployeeList');
           }else {
                dispatch({type:'loginFailure',payload:'fail'})
@@ -43,5 +44,5 @@ const access=(dispatch)=>{
 export const { Provider, Context } = createDataContext(
      authReducer,
      {login_reducer,access},
-     {errorMessage:'',allow:''}
+     {errorMessage:'',allow:'',userName:''}
 );

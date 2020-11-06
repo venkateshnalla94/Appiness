@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
 
+
 const ListItem=({data})=>{
+     
      return(
           <View style={styles.parentView}>
                
@@ -24,7 +26,7 @@ const ListItem=({data})=>{
 const styles=StyleSheet.create({
      parentView:{
           marginHorizontal:30,
-          marginTop:100,
+          marginTop:20,
           borderWidth:5,
           borderColor:'grey'
           
