@@ -1,11 +1,11 @@
 # React Native Application 
-#Appiness
+# Appiness <br >
 This application was built with feature like username and password
 validations.
 Currently validation of username is specified only to '@gmail.com' and
 password cannot be less than 8 character.
 
-State is managed by Reducers, actions and context.
+State is managed by Reducers, actions and context.<br >
 Navigation in app was done with help of "react-navigation"
 
 To Run the APP <br >
