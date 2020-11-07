@@ -3,7 +3,14 @@ import {FlatList, ImageBackground, StyleSheet, Text, View} from 'react-native';
 import ListItem from '../components/ListItem';
 import * as data from '../data/employeInfo';
 import {Context as AuthContext} from '../context/AuthContext';
+
 const image = { uri: "https://i.pinimg.com/originals/51/fe/ff/51feff92c452732f587b330d7ef3ee7a.jpg" };
+/**
+ * @author Venkatesh Nalla
+ * Employee List
+ * @returns {*}
+ * @constructor
+ */
 const EmployeeListScree=()=>{
      const {state} = useContext(AuthContext);
      return(

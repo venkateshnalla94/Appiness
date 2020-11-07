@@ -1,4 +1,13 @@
-import React, {useReducer} from'react';
+import React, {useReducer} from 'react';
+
+/**
+ * @author Venkatesh Nalla
+ * Binder
+ * @param reducer
+ * @param actions
+ * @param initialState
+ * @returns {{Context: React.Context<unknown>, Provider: (function({children: *}): *)}}
+ */
 export default (reducer,actions,initialState)=>{
      const Context=React.createContext();
      const Provider=({children})=>{

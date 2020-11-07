@@ -1,10 +1,15 @@
 import React from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
-const profilePic={uri:'https://png.pngtree.com/png-vector/20190429/ourmid/pngtree-employee-icon-vector-illustration-in-glyph-style-for-any-purpose-png-image_998315.jpg'}
-
+const profilePic={uri:'https://png.pngtree.com/png-vector/20190429/ourmid/pngtree-employee-icon-vector-illustration-in-glyph-style-for-any-purpose-png-image_998315.jpg'};
+/**
+ * @author Venkatesh Nalla
+ * To render the list of employess
+ * @param data
+ * @returns {*}
+ * @constructor
+ */
 const ListItem=({data})=>{
-     
      return(
           <TouchableOpacity
           onPress={()=>{
@@ -31,15 +36,12 @@ const ListItem=({data})=>{
                          </View>
                     </View>
                </View>
-     
           </TouchableOpacity>
-          
      )
 }
 
 const styles=StyleSheet.create({
      parentView:{
-          
           flexDirection:'row',
           marginHorizontal:30,
           marginTop:20,
@@ -47,15 +49,10 @@ const styles=StyleSheet.create({
      profile:{
           flex:.35,
           justifyContent:"center",
-          //backgroundColor:"black",
           paddingRight:5
      },
      primaryChild:{
           flex:.75,
-          //borderWidth:5,
-          //borderColor:'gold',
-          //paddingLeft:5
-          
      },
      employeeName:{
           flexDirection: 'row',
@@ -96,8 +93,6 @@ const styles=StyleSheet.create({
           borderRadius: 86/ 2,
           marginLeft: 8
      }
-     
-     
 })
 
 export default ListItem;
