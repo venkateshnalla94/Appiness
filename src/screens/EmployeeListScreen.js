@@ -3,20 +3,26 @@ import {FlatList, ImageBackground, StyleSheet, Text, View} from 'react-native';
 import ListItem from '../components/ListItem';
 import * as data from '../data/employeInfo';
 import {Context as AuthContext} from '../context/AuthContext';
-const image = { uri: "https://c4.wallpaperflare.com/wallpaper/737/512/920/minimalism-abstract-blue-background-artwork-wallpaper-preview.jpg" };
+const image = { uri: "https://i.pinimg.com/originals/51/fe/ff/51feff92c452732f587b330d7ef3ee7a.jpg" };
 const EmployeeListScree=()=>{
      const {state} = useContext(AuthContext);
      return(
           <View style={EmployeeListScreeStyles.mainView}>
-               
+               <ImageBackground source={image}
+                                style={EmployeeListScreeStyles.image}>
                <Text style={EmployeeListScreeStyles.welcomeText}>Welcome {state.userName} </Text>
-               <FlatList
-                    data={data.default.user}
-                    keyExtractor={(data)=>{return data.email}}
-                    renderItem={({item})=>{
-                         return <ListItem data={item}/>
-                    }}
-               />
+               <View>
+                    
+                         <FlatList
+                              data={data.default.user}
+                              keyExtractor={(data)=>{return data.email}}
+                              renderItem={({item})=>{
+                                   return <ListItem data={item}/>
+                              }}
+                         />
+                    
+               </View>
+               </ImageBackground>
                
               
           </View>
@@ -24,7 +30,7 @@ const EmployeeListScree=()=>{
 }
 const EmployeeListScreeStyles=StyleSheet.create({
      image:{
-          flex: 1,
+          flex:1,
           resizeMode: "cover",
           justifyContent: "center"
      },
@@ -34,8 +40,9 @@ const EmployeeListScreeStyles=StyleSheet.create({
      welcomeText:{
           fontSize:25,
           marginHorizontal:50,
-          marginTop:60,
+          marginTop:20,
           textAlign:'center',
+          color:'#f5f5f5',
      },
      
 })

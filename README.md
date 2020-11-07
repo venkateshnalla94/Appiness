@@ -18,3 +18,11 @@ To Run the APP <br >
 2.'react-native start' <br >
 3.'react-native run-ios' requires XCODE<br >
 4.'react-native run-android' requires android Studio <br >
+
+# Samples 
+
+
+![Login](Assests/login.png)
+![Password validation](Assests/password.png)
+![Password validation2](Assests/passwordvalidation.png)
+![Login](Assests/success.png)
