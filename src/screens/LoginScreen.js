@@ -1,9 +1,17 @@
 import React, {useContext, useState} from 'react';
-import {View, Text, StyleSheet, Alert, ImageBackground, TouchableOpacity, Image} from 'react-native';
-import {Input, Button} from 'react-native-elements';
+import {Alert, Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Input} from 'react-native-elements';
 import {Context as AuthContext} from '../context/AuthContext';
+
 const image = { uri: "https://cdn.wallpapersafari.com/31/92/JKaC2A.jpg" };
 const user={uri:"https://img.icons8.com/bubbles/2x/user-male.png"}
+/**
+ * @author Venkatesh Nalla
+ * login screen for the user
+ * @param navigation
+ * @returns {*}
+ * @constructor
+ */
 const LoginScreen = ({navigation}) => {
      const [userName, setUserName] = useState('');
      const [password, setPassword] = useState('');

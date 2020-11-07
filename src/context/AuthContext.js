@@ -1,5 +1,12 @@
 import createDataContext from './createDataContext';
 import * as data from '../data/userInfo';
+
+/**
+ * State managment for the application
+ * @param state
+ * @param action
+ * @returns {*|{allow: ((path: PathLike, mode?: number) => Promise<void>) | ((path: PathLike, mode: (number | undefined), callback: NoParamCallback) => void) | ((path: PathLike, callback: NoParamCallback) => void) | boolean | (function(*): function(...[*]=)) | "public" | "private" | "protected" | access, userName: string}|{allow: *}}
+ */
 const authReducer = (state, action) => {
      switch (action.type) {
           case 'login':{
@@ -17,7 +24,8 @@ const authReducer = (state, action) => {
 };
 
 /**
- * To perform Login
+ * reducers
+ * To perform Login action
  * @param dispatch
  * @returns {function(...[*]=)}
  */
@@ -33,13 +41,13 @@ const login_reducer=(dispatch)=>{
                dispatch({type:'loginFailure',payload:'fail'})
           }
      }
-}
+};
 
 const access=(dispatch)=>{
      return async ()=>{
           dispatch({type:'access',payload:''})
      }
-}
+};
 
 export const { Provider, Context } = createDataContext(
      authReducer,
